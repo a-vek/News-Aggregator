@@ -1,0 +1,33 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %}
+categorytracker
+{% endblock %}
+{% block css %}
+<style>
+</style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {% for i in articles%}
+                <div class="card" style="width: 18rem;">
+                {% comment %} <img src="{{i.urlToImage}}" class="card-img-top" alt="..."> {% endcomment %}
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.desc}}</p>
+                    <h5 class="card-title">{{i.category}}</h5>
+                    {% comment %} <p class="card-text">{{i.description}}</p> {% endcomment %}
+                    <a href="{{i.url}}" class="btn btn-primary">click here</a>
+                    <hr>
+                </div>
+            </div>
+                {%endfor%}
+
+            </div>
+{% endblock %}
+{% block js %}
+<script>
+</script>
+{% endblock %}

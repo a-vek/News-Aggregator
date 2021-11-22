@@ -1,0 +1,46 @@
+{% extends "news/base.html" %}
+
+{% block content%}
+<form method="POST">
+{% csrf_token %}
+{% comment %} <div class="col-md-4"> {% endcomment %}
+ <div class="list-group mx-0">
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0 chkcvalues" type="checkbox" value="sports" >
+      <span>
+        Sports
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0 chkcvalues" type="checkbox" value="health" >
+      <span>
+        Health
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0 chkcvalues" type="checkbox" value="business" >
+      <span>
+        Business
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0 chkcvalues" type="checkbox" value="entertainment" >
+      <span>
+        Entertainment
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0 chkcvalues" type="checkbox" value="technology" >
+      <span>
+        Technology
+      </span>
+    </label>
+    <lable style="padding: 0.75rem 4.25rem">
+    <input type="text" name="cat_name" id="txtvalues" style="padding: 0.75rem 4.25rem">
+    <input class="btn btn-primary" type="submit" value="Input" id="but1" onclick="return alert('record saved')">
+    {% comment %} <button type="button" id="but1" class="btn btn-outline-success" value="insert_record" >Success</button> {% endcomment %}
+    </lable>
+  </div>
+  {% comment %} </div> {% endcomment %}
+</form>
+{% endblock%}

@@ -1,0 +1,19 @@
+{% extends 'news/base.html' %}
+
+{% block content%}
+
+{% comment %} <form method='post' action=''> {% endcomment %}
+    {% comment %} <span style="display:inline-block"> {% endcomment %}
+        {% comment %} <label for="cat_name" style="display:block">All Categories</label> {% endcomment %}
+    <div class = "multi_select_box">
+        <select class="multi_select w-100" multiple data-selected-text-format="count>3">
+            <option disabled="true" selected> select your category </option>
+            {% for cat in results %}
+                <option value='{{cat.id}}'>{{ cat.cat_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    {% comment %} </span> {% endcomment %}
+{% comment %} </form> {% endcomment %}
+{%endblock%}

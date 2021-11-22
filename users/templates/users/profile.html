@@ -1,0 +1,65 @@
+{% extends "news/base.html" %} 
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-8"> 
+<div class="content-section">
+  <div class="media">
+    <img
+      class="rounded-circle account-img"
+      src="{{ user.profile.image.url }}"
+    />
+    <div class="media-body">
+      <h2 class="account-heading">{{ user.username }}</h2>
+      <p class="text-secondary">{{ user.email }}</p>
+    </div>
+  </div>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Profile Info</legend>
+      {{ u_form|crispy }} {{ p_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Update</button>
+    </div>
+  </form>
+</div>
+</div>
+
+{% comment %} <div class="col-md-4">
+ <div class="list-group mx-0"> {% endcomment %}
+    {% comment %} <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
+      <span>
+        Sports
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0" type="checkbox" value="">
+      <span>
+        Health
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0" type="checkbox" value="">
+      <span>
+        Business
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0" type="checkbox" value="">
+      <span>
+        Entertainment
+      </span>
+    </label>
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0" type="checkbox" value="">
+      <span>
+        Technology
+      </span>
+    </label> {% endcomment %}
+  {% comment %} </div>
+  </div> {% endcomment %}
+{% endblock content %}
+
+    

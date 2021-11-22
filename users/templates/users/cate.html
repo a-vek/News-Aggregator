@@ -1,0 +1,24 @@
+{% extends "news/base.html" %}
+
+{% block content%}
+<form method="POST">
+{% csrf_token %}
+{% comment %} <div class="col-md-4"> {% endcomment %}
+ <div class="list-group mx-0">
+ {% for cat in results %}
+    <label class="list-group-item d-flex gap-2" style="padding: 0.75rem 4.25rem">
+      <input class="form-check-input flex-shrink-0 chkcvalues" type="checkbox" value="{{cat.id}}" >
+      <span>
+        {{cat.cat_name}}
+      </span>
+    </label>
+
+{% endfor %}
+    <lable style="padding: 0.75rem 4.25rem">
+    {% comment %} <input type="text" name="cat_name" id="txtvalues" style="padding: 0.75rem 4.25rem"> {% endcomment %}
+    <input class="btn btn-primary" type="submit" value="Input" id="but1" onclick="return alert('record saved')">
+    {% comment %} <button type="button" id="but1" class="btn btn-outline-success" value="insert_record" >Success</button> {% endcomment %}
+    </lable>
+  {% comment %} </div> {% endcomment %}
+</form>
+{% endblock%}
